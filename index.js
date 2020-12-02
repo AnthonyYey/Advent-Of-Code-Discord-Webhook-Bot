@@ -31,7 +31,7 @@ async function postWebhook(data) {
     }
 }
 
-let job = schedule.scheduleJob({rule: "*/15 * * * *"}, async function() {
+let job = schedule.scheduleJob({rule: "*/30 * * * *"}, async function() {
     console.log("triggered")
     const response = await getData()
     let stored = null
@@ -109,13 +109,14 @@ let job = schedule.scheduleJob({rule: "*/15 * * * *"}, async function() {
     var asciiTable = new AsciiTable()
 
     asciiTable
-        .setHeading('#', '⭐️', 'Developer')
+        .setHeading('#', 'Score', '⭐️', 'Developer')
         .setAlign(0, AsciiTable.CENTER)
         .setAlign(1, AsciiTable.CENTER)
+        .setAlign(2, AsciiTable.CENTER)
         .removeBorder()
 
     for (let i = 0; i < leaderboard.length; ++i) {
-        asciiTable.addRow(i + 1, leaderboard[i].stars, leaderboard[i].name);
+        asciiTable.addRow(i + 1, leaderboard[i].score, leaderboard[i].stars, leaderboard[i].name);
     }
 
     const leaderboardEmbed = {
