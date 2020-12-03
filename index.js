@@ -5,9 +5,9 @@ const axios = require('axios');
 const fs = require('fs');
 
 const color = {
-    leaderboard: 5814783,
-    newDevs: 5814783,
-    devsUpdate: 5814783
+    leaderboard: 14079702,
+    newDevs: 41727,
+    devsUpdate: 16775506
 }
 
 async function getData() {
